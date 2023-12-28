@@ -1,3 +1,5 @@
 <template>
-    <div>foobar</div>
+    <NuxtLayout>
+        <NuxtPage />
+    </NuxtLayout>
 </template>

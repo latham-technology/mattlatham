@@ -11,6 +11,27 @@ export default defineNuxtConfig({
         },
     },
 
+    css: ['@/assets/scss/index.scss'],
+
+    app: {
+        head: {
+            titleTemplate: '%s | Matt Latham',
+            meta: [
+                { charset: 'utf-8', hid: 'charset' },
+                {
+                    name: 'viewport',
+                    content: 'width=device-width,initial-scale=1',
+                    hid: 'viewport',
+                },
+                {
+                    hid: 'format-detection',
+                    name: 'format-detection',
+                    content: 'telephone=no',
+                },
+            ],
+        },
+    },
+
     modules: [
         '@nuxt/content',
         '@nuxtjs/plausible',
@@ -18,8 +39,21 @@ export default defineNuxtConfig({
         '@nuxt/image',
         '@nuxtjs/color-mode',
         '@nuxtjs/google-fonts',
+        '@morev/vue-transitions/nuxt',
         'nuxt-simple-sitemap',
     ],
+
+    content: {
+        markdown: {
+            remarkPlugins: ['remark-reading-time'],
+        },
+    },
+
+    image: {
+        cloudinary: {
+            baseURL: `https://res.cloudinary.com/${process.env.NUXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/`,
+        },
+    },
 
     googleFonts: {
         families: {

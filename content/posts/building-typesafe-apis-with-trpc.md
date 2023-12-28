@@ -1,5 +1,5 @@
 ---
-title: Building typesafe APIs with tRPC
+title: Building Typesafe APIs with tRPC
 description: tRPC is a TypeScript framework for building APIs that focuses on type safety, validation, and ease of use
 category: ['api', 'server']
 published: 2023-12-09 00:00
@@ -36,27 +36,27 @@ Now, let's define a simple API using tRPC. Create a folder named api and add an 
 ```typescript
 // api/helloWorld.ts
 
-import { createTRPC } from '@trpc/server';
-import { z } from 'zod';
+import { createTRPC } from '@trpc/server'
+import { z } from 'zod'
 
 const appRouter = createTRPC<{}>({
-  router: {
-    helloWorld: {
-      input: null,
-      resolve: () => {
-        return { message: 'Hello, World!' };
-      },
+    router: {
+        helloWorld: {
+            input: null,
+            resolve: () => {
+                return { message: 'Hello, World!' }
+            },
+        },
     },
-  },
-});
+})
 
 export type Context = typeof appRouter extends infer Router
-  ? Router extends createTRPC<infer Context>
-    ? Context
+    ? Router extends createTRPC<infer Context>
+        ? Context
+        : never
     : never
-  : never;
 
-export default appRouter;
+export default appRouter
 ```
 
 This endpoint helloWorld takes no input and simply returns a greeting message.
@@ -68,17 +68,17 @@ Now, let's create the server to serve our API. Create an index.ts file in the ro
 ```typescript
 // index.ts
 
-import { createNextApiHandler } from '@trpc/server/adapters/next';
-import { createContext } from './api/context';
-import apiRouter from './api/helloWorld';
+import { createNextApiHandler } from '@trpc/server/adapters/next'
+import { createContext } from './api/context'
+import apiRouter from './api/helloWorld'
 
 export default createNextApiHandler({
-  router: apiRouter,
-  createContext,
-});
+    router: apiRouter,
+    createContext,
+})
 ```
 
-# Running the Server  
+# Running the Server
 
 To start the server, run the following command:
 
@@ -90,43 +90,43 @@ yarn dev
 
 This will start the server, and your tRPC API will be available at `http://localhost:3000/api/helloWorld`.
 
-# Consuming the API  
+# Consuming the API
 
 To consume the API, let's create a simple Next.js page. Create a file named index.tsx inside the pages directory:
 
 ```tsx
 // pages/index.tsx
 
-import { GetServerSideProps } from 'next';
-import { createReactQueryHooks } from '@trpc/react';
-import { trpc } from '../utils/trpc';
-import React from 'react';
+import { GetServerSideProps } from 'next'
+import { createReactQueryHooks } from '@trpc/react'
+import { trpc } from '../utils/trpc'
+import React from 'react'
 
-const trpcClient = trpc.createClient();
+const trpcClient = trpc.createClient()
 
 const Home: React.FC = () => {
-  const { data } = createReactQueryHooks(trpcClient).useQuery(['helloWorld']);
+    const { data } = createReactQueryHooks(trpcClient).useQuery(['helloWorld'])
 
-  return (
-    <div>
-      <h1>tRPC Example</h1>
-      <p>{data?.message}</p>
-    </div>
-  );
-};
+    return (
+        <div>
+            <h1>tRPC Example</h1>
+            <p>{data?.message}</p>
+        </div>
+    )
+}
 
-export default Home;
+export default Home
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  return {
-    props: {},
-  };
-};
+    return {
+        props: {},
+    }
+}
 ```
 
 This page uses `@trpc/react` and `createReactQueryHooks` to fetch the helloWorld endpoint data and display the message.
 
-# Conclusion  
+# Conclusion
 
 tRPC simplifies the process of creating APIs in TypeScript by providing type safety, automatic validation, and a straightforward API definition. It's a powerful tool for building robust and type-safe APIs.
 
