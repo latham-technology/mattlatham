@@ -29,11 +29,9 @@
                         </div>
                     </header>
 
-                    <ContentRenderer :value="post" class="post__content" />
+                    <ContentRenderer :value="post" class="my-10" />
 
-                    <div
-                        class="mt-12 flex items-center flex-wrap gap-8 not-prose"
-                    >
+                    <div class="flex items-center flex-wrap gap-8 not-prose">
                         <NuxtLink
                             v-if="prev"
                             :to="prev._path"
@@ -72,8 +70,6 @@
 
 <script setup lang="ts">
 const route = useRoute()
-
-console.log(route.path)
 
 const [prev, next] = await queryContent('posts')
     .only(['_path', 'title'])

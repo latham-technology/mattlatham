@@ -8,12 +8,10 @@
     </div>
 </template>
 
-<script>
-export default {
-    head: {
-        title: 'Home',
-    },
-}
+<script setup>
+useHead({
+    title: 'Hello',
+})
 </script>
 
 <style lang="scss" scoped></style>

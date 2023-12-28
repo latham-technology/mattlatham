@@ -14,6 +14,10 @@
 </template>
 
 <script setup>
+useHead({
+    title: 'Posts',
+})
+
 const query = {
     sort: {
         published: 1,

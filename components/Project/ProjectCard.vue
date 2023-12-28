@@ -1,12 +1,13 @@
 <template>
     <div>
         <a :href="props.project._path" target="_blank">
-            <div v-if="props.project.image">
+            <div v-if="props.project.image" class="w-[309px] h-[190px]">
                 <NuxtImg
                     width="309"
                     height="190"
                     sizes="sm:100vw md:309px"
                     placeholder
+                    class="w-full h-full"
                     :src="props.project.image.src"
                     :provider="props.project.image.provider"
                 />

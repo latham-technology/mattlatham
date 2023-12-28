@@ -14,19 +14,16 @@
         <div class="hero__text-wrapper prose dark:prose-invert">
             <h1>👋 Hi, I'm Matt</h1>
             <p>
-                I focus on building web applications that are fast, scalable,
-                and maintainable.
+                I'm a web applications developer focused on building user
+                friendly tools that are fast, flexible, scalable, and
+                maintainable. I also do some DevOps and Unix systems
+                administration.
             </p>
             <p>
-                Also some DevOps and UNIX systems administration. Find me on
-                <a target="_blank" href="https://twitter.com/jadget">Twitter</a
-                >,
-                <a
-                    target="_blank"
-                    href="https://www.linkedin.com/in/mattlatham/"
-                    >LinkedIn</a
-                >, or send me an
-                <a target="_blank" href="mailto:hi@mattlatham.dev">email</a>.
+                Find me on
+                <a href="https://twitter.com/jadget">Twitter</a>,
+                <a href="https://www.linkedin.com/in/mattlatham/">LinkedIn</a>,
+                or send me an <a href="mailto:matt@mattlatham.dev">email</a>.
             </p>
         </div>
     </div>
