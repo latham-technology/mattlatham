@@ -1,0 +1,24 @@
+.layout-enter-active,
+.layout-leave-active,
+.page-enter-active,
+.page-leave-active {
+  transition-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(.25,.8,.50,1);
+}
+
+.layout-enter,
+.layout-leave,
+.page-enter-to,
+.page-leave {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.layout-enter,
+.layout-leave-to,
+.page-enter,
+.page-leave-to {
+  transform: translateY(15px);
+  opacity: 0;
+}

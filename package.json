@@ -10,8 +10,20 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@notafunction/prettier-config": "^0.1.0",
+    "@nuxtjs/color-mode": "^3.3.2",
+    "@nuxtjs/google-fonts": "^3.1.3",
+    "@nuxtjs/plausible": "^0.2.4",
+    "@tailwindcss/typography": "^0.5.10",
     "nuxt": "^3.9.0",
+    "nuxt-simple-sitemap": "^4.2.0",
+    "prettier": "^3.1.1",
     "vue": "^3.3.13",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@nuxt/content": "^2.10.0",
+    "@nuxt/image": "^1.1.0",
+    "@nuxtjs/tailwindcss": "^6.10.3"
   }
 }
