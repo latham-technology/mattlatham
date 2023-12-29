@@ -15,6 +15,9 @@ export default defineNuxtConfig({
 
     app: {
         head: {
+            htmlAttrs: {
+                lang: 'en',
+            },
             titleTemplate: '%s | Matt Latham',
             meta: [
                 { charset: 'utf-8', hid: 'charset' },
@@ -27,6 +30,13 @@ export default defineNuxtConfig({
                     hid: 'format-detection',
                     name: 'format-detection',
                     content: 'telephone=no',
+                },
+            ],
+            link: [
+                {
+                    rel: 'icon',
+                    type: 'image/png',
+                    href: '/icon.png',
                 },
             ],
         },

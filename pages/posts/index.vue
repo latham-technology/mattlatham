@@ -20,7 +20,7 @@ useHead({
 
 const query = {
     sort: {
-        published: 1,
+        published: -1,
     },
 }
 </script>
