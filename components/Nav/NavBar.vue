@@ -1,5 +1,5 @@
 <template>
-    <TransitionSlide appear :offset="[0, '-100%']">
+    <TransitionSlide :offset="[0, '-100%']">
         <div v-show="showNavBar" class="nav-bar">
             <NavBrand />
 
