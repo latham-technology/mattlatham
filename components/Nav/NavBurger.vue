@@ -1,9 +1,13 @@
 <template>
-    <button class="nav-burger">
+    <button @click="ui.toggleNav" class="nav-burger">
         <div class="nav-burger__line"></div>
         <div class="nav-burger__line"></div>
     </button>
 </template>
+
+<script setup>
+const ui = useUi()
+</script>
 
 <style lang="scss" scoped>
 .nav-burger {

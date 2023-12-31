@@ -3,12 +3,6 @@
         <div class="container">
             <NavBar :class="{ 'nav-is-open': ui.state.isNavOpen }" />
         </div>
-
-        <client-only>
-            <portal to="navigation">
-                <NavFullScreen v-if="ui.state.isNavOpen" />
-            </portal>
-        </client-only>
     </nav>
 </template>
 

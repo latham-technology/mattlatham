@@ -8,10 +8,6 @@
         <TheHeader />
 
         <slot />
-
-        <client-only>
-            <portal-target name="navigation" />
-        </client-only>
     </main>
 </template>
 

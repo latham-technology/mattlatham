@@ -73,7 +73,7 @@ const route = useRoute()
 
 const [prev, next] = await queryContent('posts')
     .only(['_path', 'title'])
-    .sort({ published: 1 })
+    .sort({ published: -1 })
     .findSurround(route.path)
 </script>
 

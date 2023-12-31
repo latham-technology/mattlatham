@@ -13,7 +13,7 @@
 
                 <ColorModePicker class="hidden md:block mx-2" />
 
-                <NavBurger class="nav-burger" @click.native="ui.toggleNav" />
+                <!-- <NavBurger class="nav-burger" /> -->
             </div>
         </div>
     </TransitionSlide>
@@ -27,7 +27,6 @@ const props = defineProps({
     },
 })
 
-const ui = useUi()
 const showNavBar = ref(true)
 const lastScrollPosition = ref(0)
 
@@ -83,11 +82,11 @@ function onScroll() {
 }
 
 .nav-links {
-    @apply hidden md:flex;
+    @apply flex;
     @apply items-center ml-auto;
 
     a {
-        @apply block font-bold tracking-widest px-4 py-2;
+        @apply block font-bold tracking-widest px-3 py-2;
         @apply rounded transform transition;
         @apply dark:text-white;
 
