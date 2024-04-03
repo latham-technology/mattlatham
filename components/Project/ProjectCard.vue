@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a :href="props.project._path" target="_blank">
+        <a :href="props.project.url" target="_blank">
             <div v-if="props.project.image" class="w-[309px] h-[190px]">
                 <NuxtImg
                     width="309"
