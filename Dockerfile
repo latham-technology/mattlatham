@@ -1,0 +1,21 @@
+FROM node:18-alpine
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+
+RUN npm run prisma:generate
+RUN npm run build
+
+ENV NUXT_HOST=0.0.0.0
+ENV NUXT_PORT=3000
+ENV NODE_ENV
+ENV NUXT_PUBLIC_SITE_URL
+ENV NUXT_PUBLIC_PLAUSIBLE_DOMAIN
+ENV NUXT_PUBLIC_PLAUSIBLE_API_HOST
+ENV NUXT_PUBLIC_CLOUDINARY_CLOUD_NAME
+
+EXPOSE 3000
+
+CMD ["node", ".output/server/index.mjs"]
