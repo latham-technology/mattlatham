@@ -38,6 +38,8 @@ jobs:
                   tags: |
                       ${{ env.IMAGE_URL }}:${{ steps.sha.outputs.sha_short }}
                       ${{ env.IMAGE_URL }}:latest
+                  build-args: |
+                      NUXT_PUBLIC_CLOUDINARY_CLOUD_NAME=${{ secrets.NUXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
 
             - name: Deploy Image to CapRrover
               uses: caprover/deploy-from-github@v1.1.2
