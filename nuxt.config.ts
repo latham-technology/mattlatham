@@ -2,7 +2,7 @@ export default defineNuxtConfig({
     runtimeConfig: {
         public: {
             environment: process.env.NODE_ENV,
-            baseUrl: process.env.BASE_URL,
+            baseUrl: process.env.NUXT_PUBLIC_SITE_URL,
 
             plausible: {
                 domain: process.env.NUXT_PUBLIC_PLAUSIBLE_DOMAIN,
@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     css: ['@/assets/scss/index.scss'],
 
     app: {
+        pageTransition: { name: 'page', mode: 'out-in' },
         head: {
             htmlAttrs: {
                 lang: 'en',
@@ -42,6 +43,10 @@ export default defineNuxtConfig({
         },
     },
 
+    site: {
+        url: process.env.NUXT_PUBLIC_SITE_URL,
+    },
+
     modules: [
         '@nuxt/content',
         '@nuxtjs/plausible',
@@ -50,7 +55,6 @@ export default defineNuxtConfig({
         '@nuxtjs/color-mode',
         '@nuxtjs/google-fonts',
         '@morev/vue-transitions/nuxt',
-        'nuxt-simple-sitemap',
     ],
 
     content: {
@@ -83,9 +87,9 @@ export default defineNuxtConfig({
     },
 
     sitemap: {
-        url: process.env.BASE_URL,
         strictNuxtContentPaths: true,
     },
 
     devtools: { enabled: true },
+    compatibilityDate: '2024-07-10',
 })

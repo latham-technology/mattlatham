@@ -2,23 +2,24 @@
 .layout-leave-active,
 .page-enter-active,
 .page-leave-active {
-  transition-duration: 0.5s;
-  animation-fill-mode: both;
-  animation-timing-function: cubic-bezier(.25,.8,.50,1);
+    transition-property: transform, opacity;
+    transition-duration: 0.2s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.25, 0.8, 0.5, 1);
 }
 
 .layout-enter,
 .layout-leave,
 .page-enter-to,
-.page-leave {
-  transform: translateY(0);
-  opacity: 1;
+.page-leave-from {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .layout-enter,
 .layout-leave-to,
-.page-enter,
+.page-enter-from,
 .page-leave-to {
-  transform: translateY(15px);
-  opacity: 0;
+    transform: translateX(-15px);
+    opacity: 0;
 }
