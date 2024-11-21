@@ -12,13 +12,16 @@
                     :provider="props.project.image.provider"
                 />
             </div>
-            <h3 class="my-2">{{ props.project.title }}</h3>
-        </a>
-        <div class="flex items-center gap-2">
-            <Tag v-for="tag in props.project.tags" :key="tag" :text="tag" />
-        </div>
 
-        <ContentRendererMarkdown class="mt-2" :value="$props.project" />
+            <h3 class="my-2">{{ props.project.title }}</h3>
+
+            <div class="flex items-center gap-2">
+                <Tag v-for="tag in props.project.tags" :key="tag" :text="tag" />
+            </div>
+
+            <ContentRendererMarkdown class="mt-2" :value="$props.project" />
+        </a>
+
     </div>
 </template>
 
