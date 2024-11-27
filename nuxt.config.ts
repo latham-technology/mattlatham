@@ -1,12 +1,14 @@
+import { definePerson } from 'nuxt-schema-org/schema'
+
 export default defineNuxtConfig({
     runtimeConfig: {
         public: {
-            environment: process.env.NODE_ENV,
-            baseUrl: process.env.NUXT_PUBLIC_SITE_URL,
+            environment: '',
+            baseUrl: '',
 
             plausible: {
-                domain: process.env.NUXT_PUBLIC_PLAUSIBLE_DOMAIN,
-                apiHost: process.env.NUXT_PUBLIC_PLAUSIBLE_API_HOST,
+                domain: '',
+                apiHost: '',
             },
         },
     },
@@ -19,16 +21,14 @@ export default defineNuxtConfig({
             htmlAttrs: {
                 lang: 'en',
             },
-            titleTemplate: '%s | Matt Latham',
+            titleTemplate: 'Matt Latham | %s',
             meta: [
-                { charset: 'utf-8', hid: 'charset' },
+                { charset: 'utf-8' },
                 {
                     name: 'viewport',
                     content: 'width=device-width,initial-scale=1',
-                    hid: 'viewport',
                 },
                 {
-                    hid: 'format-detection',
                     name: 'format-detection',
                     content: 'telephone=no',
                 },
@@ -45,6 +45,7 @@ export default defineNuxtConfig({
 
     site: {
         url: process.env.NUXT_PUBLIC_SITE_URL,
+        name: 'Matt Latham',
     },
 
     modules: [
@@ -55,6 +56,7 @@ export default defineNuxtConfig({
         '@nuxtjs/color-mode',
         '@nuxtjs/google-fonts',
         '@morev/vue-transitions/nuxt',
+        '@nuxtjs/seo',
     ],
 
     content: {
@@ -87,7 +89,19 @@ export default defineNuxtConfig({
     },
 
     sitemap: {
-        strictNuxtContentPaths: true,
+        sources: ['/api/__sitemap__/urls'],
+    },
+
+    schemaOrg: {
+        identity: definePerson({
+            name: 'Matt Latham',
+            image: '/photo.jpg',
+            url: process.env.BASE_URL,
+            sameAs: [
+                'https://twitter.com/jadget',
+                'https://www.linkedin.com/in/mattlatham',
+            ],
+        }),
     },
 
     devtools: { enabled: true },

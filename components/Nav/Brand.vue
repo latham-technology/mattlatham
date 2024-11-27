@@ -26,7 +26,10 @@
         </div>
 
         <TransitionSlide :offet="[0, '100%']" :delay="100">
-            <div v-show="state.isHovering" class="nav-brand__name">
+            <div
+                v-show="state.isHovering"
+                class="nav-brand__name hidden sm:block"
+            >
                 Matt Latham
             </div>
         </TransitionSlide>
@@ -58,7 +61,7 @@ onBeforeUnmount(() => {
 
 function onMouseEnter() {
     state.isHovering = true
-    intervalHandle.value = setInterval(morphSvgColors, 1000)
+    intervalHandle.value = setInterval(morphSvgColors, 500)
 }
 
 function onMouseLeave() {
@@ -69,7 +72,16 @@ function onMouseLeave() {
 }
 
 function morphSvgColors() {
-    state.svgColors = state.svgColors.map(colorMorph)
+    state.svgColors = state.svgColors.map(() => {
+        const chars = '0123456789ABCDEF'.split('')
+
+        let color = '#'
+        for (let i = 0; i < 6; i++) {
+            color += chars[Math.floor(Math.random() * 16)]
+        }
+
+        return color
+    })
 }
 
 function colorMorph() {

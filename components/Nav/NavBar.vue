@@ -12,9 +12,9 @@
                     <nuxt-link to="/posts">Posts</nuxt-link>
                 </div>
 
-                <ColorModePicker class="hidden md:block mx-2" />
-
-                <!-- <NavBurger class="nav-burger" /> -->
+                <!--                <ClientOnly>-->
+                <!--                    <ColorModePicker class="hidden md:block mx-2" />-->
+                <!--                </ClientOnly>-->
             </div>
         </div>
     </TransitionSlide>

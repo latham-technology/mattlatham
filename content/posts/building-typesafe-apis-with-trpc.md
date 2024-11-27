@@ -1,17 +1,20 @@
 ---
 title: Building Typesafe APIs with tRPC
 description: tRPC is a TypeScript framework for building APIs that focuses on type safety, validation, and ease of use
-category: ['api', 'server']
+category: [ 'api', 'server' ]
 published: 2023-12-09 00:00
 ---
 
-# What is tRPC?
+## What is tRPC?
 
-tRPC is a TypeScript framework for building APIs that focuses on type safety, validation, and ease of use. It enables developers to define endpoints and automatically generate type-safe clients for consuming those endpoints. Its features include automatic request validation, response serialization, and strong typing throughout the API lifecycle.
+tRPC is a TypeScript framework for building APIs that focuses on type safety, validation, and ease of use. It enables
+developers to define endpoints and automatically generate type-safe clients for consuming those endpoints. Its features
+include automatic request validation, response serialization, and strong typing throughout the API lifecycle.
 
-# Setting Up a tRPC Project
+## Setting Up a tRPC Project
 
-To get started with tRPC, you'll need Node.js and npm or yarn installed on your machine. Begin by creating a new TypeScript project:
+To get started with tRPC, you'll need Node.js and npm or yarn installed on your machine. Begin by creating a new
+TypeScript project:
 
 ```shell
 mkdir trpc-api
@@ -29,9 +32,10 @@ npm install trpc @trpc/server @trpc/client @trpc/client/next
 yarn add trpc @trpc/server @trpc/client @trpc/client/next
 ```
 
-# Defining Your API
+## Defining Your API
 
-Now, let's define a simple API using tRPC. Create a folder named api and add an endpoint to it. For example, let's create a helloWorld.ts file:
+Now, let's define a simple API using tRPC. Create a folder named api and add an endpoint to it. For example, let's
+create a helloWorld.ts file:
 
 ```typescript
 // api/helloWorld.ts
@@ -61,7 +65,7 @@ export default appRouter
 
 This endpoint helloWorld takes no input and simply returns a greeting message.
 
-# Creating the Server
+## Creating the Server
 
 Now, let's create the server to serve our API. Create an index.ts file in the root folder of your project:
 
@@ -78,7 +82,7 @@ export default createNextApiHandler({
 })
 ```
 
-# Running the Server
+#3 Running the Server
 
 To start the server, run the following command:
 
@@ -90,7 +94,7 @@ yarn dev
 
 This will start the server, and your tRPC API will be available at `http://localhost:3000/api/helloWorld`.
 
-# Consuming the API
+## Consuming the API
 
 To consume the API, let's create a simple Next.js page. Create a file named index.tsx inside the pages directory:
 
@@ -126,8 +130,10 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
 This page uses `@trpc/react` and `createReactQueryHooks` to fetch the helloWorld endpoint data and display the message.
 
-# Conclusion
+## Conclusion
 
-tRPC simplifies the process of creating APIs in TypeScript by providing type safety, automatic validation, and a straightforward API definition. It's a powerful tool for building robust and type-safe APIs.
+tRPC simplifies the process of creating APIs in TypeScript by providing type safety, automatic validation, and a
+straightforward API definition. It's a powerful tool for building robust and type-safe APIs.
 
-This guide covered the basic setup and creation of a simple tRPC API. Explore more features and advanced usage to leverage the full potential of tRPC in your projects!
+This guide covered the basic setup and creation of a simple tRPC API. Explore more features and advanced usage to
+leverage the full potential of tRPC in your projects!

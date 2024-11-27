@@ -4,25 +4,25 @@ html,
 body,
 #__nuxt,
 #__layout {
-    @apply h-full;
-    font-family: Heebo, sans-serif;
+  @apply h-full;
+  font-family: Heebo, sans-serif;
 }
 
 body,
 #__nuxt,
 #__layout {
-    @apply bg-gray-50 dark:bg-gray-900;
-    @apply text-gray-800 dark:text-white;
-    @apply transition-colors;
-    @apply text-sm md:text-base;
+  @apply bg-gray-50 dark:bg-gray-900;
+  @apply text-gray-800 dark:text-white;
+  @apply transition-colors;
+  @apply text-sm md:text-base;
 }
 
 #webpack-hot-middleware-clientOverlay {
-    display: none;
+  display: none;
 }
 
 .section {
-    @apply py-10;
+  @apply py-10;
 }
 
 h1,
@@ -31,34 +31,34 @@ h3,
 h4,
 h5,
 h6 {
-    @apply font-bold mb-2;
-    @apply transition-all;
+  @apply font-bold mb-2;
+  @apply transition-all;
 }
 
 h1 {
-    @apply text-2xl mb-4;
-    @apply text-brand-primary-dark dark:text-brand-primary;
+  @apply text-2xl mb-4;
+  @apply text-brand-primary-dark dark:text-brand-primary;
 }
 
 h2 {
-    @apply text-xl;
-    @apply text-brand-secondary-dark dark:text-brand-secondary;
+  @apply text-xl;
+  @apply text-brand-secondary-dark dark:text-brand-secondary;
 }
 
 h3 {
-    @apply text-xl;
+  @apply text-xl;
 }
 
 h4 {
-    @apply text-lg;
+  @apply text-lg;
 }
 
 h5 {
-    @apply text-sm;
+  @apply text-sm;
 }
 
 a {
-    @apply text-brand-primary dark:text-brand-secondary-light;
-    @apply hover:text-brand-combined dark:hover:text-brand-secondary;
-    @apply transition-colors;
+  @apply text-brand-primary-dark dark:text-brand-secondary-light;
+  @apply hover:text-brand-combined dark:hover:text-brand-secondary;
+  @apply transition-colors;
 }

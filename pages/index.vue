@@ -39,7 +39,7 @@
 
 <script setup>
 useHead({
-    title: 'Hello',
+    title: '🤘',
 })
 </script>
 
